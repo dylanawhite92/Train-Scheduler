@@ -1,0 +1,16 @@
+.jumbotron {
+    background-color: saddlebrown;
+}
+
+.jumbotron, .card-header {
+    color: white;
+}
+
+.card-header, #add-train-btn {
+    background-color: cornflowerblue;
+    font-weight: bold;
+}
+
+.card {
+    border: solid 2px cornflowerblue;
+}
