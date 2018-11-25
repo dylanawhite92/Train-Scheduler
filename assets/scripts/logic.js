@@ -61,11 +61,14 @@ $(document).ready(function () {
     var frequency = childSnapshot.val().frequency;
     var trainTime = childSnapshot.val().start;
 
+
+    // Variables and functions for resolving a train's next arrival and minutes away
     var remainder = moment().diff(moment.unix(trainTime), "minutes") % frequency;
     var minutesAway = frequency - remainder;
 
     var nextArrival = moment().add(minutesAway, "m").format("hh:mm A");
 
+    // Append new cells in new html row
     var newRow = $("<tr>").append(
       $("<td>").text(trainName),
       $("<td>").text(trainDestination),
@@ -73,7 +76,8 @@ $(document).ready(function () {
       $("<td>").text(nextArrival),
       $("<td>").text(minutesAway)
     );
-
+    
+    // Display it in the tbody
     $("#train-table > tbody").append(newRow);
   });
 });
